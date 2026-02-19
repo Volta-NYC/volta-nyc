@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --green: #85CC17;
+  --blue: #3B74ED;
+  --bg: #F7F7F2;
+  --ink: #0D0D0D;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-dm-sans), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dot grid pattern */
+.dot-grid {
+  background-image: radial-gradient(circle, #c8c8c0 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Card hover */
+.project-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Tag pill */
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* Form inputs */
+.volta-input {
+  width: 100%;
+  background: white;
+  border: 1.5px solid #E5E5DF;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-family: var(--font-dm-sans), sans-serif;
+  font-size: 15px;
+  color: #0D0D0D;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.volta-input:focus {
+  border-color: #85CC17;
+}
+.volta-input::placeholder {
+  color: #9CA3AF;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F7F7F2; }
+::-webkit-scrollbar-thumb { background: #d1d1cc; border-radius: 3px; }
